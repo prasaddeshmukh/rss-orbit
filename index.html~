@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Todos</title>
+  <link rel="stylesheet" href="todos.css"/>
+  <link rel="stylesheet" href="lib/css/foundation.css" />
+  
+</head>
+
+<body>
+
+<div id="myapp">
+
+<header>
+ <h1>Todos</h1>
+<form method="post">
+     <input id="new-data" type="text" placeholder="What needs to be done?"><br>
+      <input type="submit" value="store" id="submit">		
+</form>      
+</header>
+
+
+ <section id="main">
+  <label id="toggle-all"></label>
+  <ul id="todo-list"></ul>
+ </section>
+	<footer>
+     </footer>
+
+</div>
+  
+  <script src="jquery-1.9.1.js"></script>
+  <script src="underscore.js"></script>
+  <script src="backbone.js"></script>
+  <script src="backbone.localStorage.js"></script>
+  <script src="todos.js"></script>
+
+  <!-- Templates -->
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <!--<input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />-->
+      <label><%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+  <script type="text/template" id="stats-template">
+    
+    <div class="todo-count">  <span><button id="clear-completed">Clear All</button></span></div>
+    
+  </script>
+
+  </body>
+</html>
